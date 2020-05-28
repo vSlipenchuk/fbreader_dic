@@ -1,0 +1,8 @@
+
+export LANG=ru_RU.utf8
+t=`sdcv -n "$1" | grep -v "\-->" | grep -v Found | grep -v -e '^$'`
+t=${t:0:1000}
+echo "$t" > /tmp/lastdic
+
+notify-send -t 5000  "$t"
+
